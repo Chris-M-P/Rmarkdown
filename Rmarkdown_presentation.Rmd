@@ -15,21 +15,24 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Goals
 
-1. To understand what Rmarkdown is (and isn't)
-2. To be able to make your own output from Rmarkdown
-3. To be able to apply Rmarkdown to your own work
+1. To understand what R Markdown is (and isn't)
+2. To be able to make your own output from R Markdown
+3. To be able to apply R Markdown to your own work
     + Or know that it's not for you!
 
 ## Outline
 
-### Lecture + tutorial
+### **Lecture** + Tutorial
 
-#### Lecture
+1. What is R markdown?
+2. What can you use R Markdown for?
+3. How does it work?
 
-1. 
+## Outline
 
-#### Tutorial
+### Lecture + **Tutorial**
 
+Make your own R markdown document
 
 ## What is R Markdown?
 
@@ -73,6 +76,34 @@ summary(cars)
 ```{r pressure}
 plot(pressure)
 ```
+
+## Slide with inline maths
+
+- You can insert results of R code using 3 backticks \`\`\`
+
+    <code>
+    \`\`\`{r}  
+    code here  
+    \`\`\`  
+    </code>
+
+- You can also do this 'inline' like this <code> \` r 2 + 3 \` </code> , but only the results are shown
+
+    `r 2 + 3`
+
+- Simple maths example
+
+```{r, echo=TRUE}
+2 + 3
+```
+
+- To do this I typed
+
+\`\`\`{r}  
+2 + 3  
+\`\`\`
+
+
 
 ## R Notebook - standalone R Markdown documents
 
