@@ -4,10 +4,7 @@ subtitle: "Slides available at UPDATE THIS LINK!! [GitHub](https://github.com/Ch
 author: "Chris Penfold"
 date: "26 October 2018"
 output:
-  rmdshower::shower_presentation:
-    self_contained: false
-    katex: true
-    ratio: 16x10
+ ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -98,7 +95,7 @@ An R Notebook is a special execution mode of R Markdown with two characteristics
 ## Times to use R Markdown
 
 |PROBLEM |	COMMON TOOL |	BETTER TOOL|
-|:--------:|:--------------:|:-------------:|
+|--------|--------------|-------------|
 |Share reports and presentations	| Microsoft Office |	R Markdown|
 |Summarize and share your interactive analyses	| R Scripts	| R Notebooks|
 
