@@ -1,0 +1,39 @@
+---
+title: "Untitled"
+author: "Chris Penfold"
+date: "1 November 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r table, results = "asis"}
+library(car)
+lm1 <- lm(prestige ~ income + education, data=Duncan)
+
+## html
+# stargazer
+library(stargazer)
+stargazer(lm1, type="html", notes="stargazer html")
+# htmlreg
+library(texreg)
+htmlreg(lm1, custom.note="%stars. htmlreg")
+
+## pdf/latex
+# stargazer
+stargazer(lm1, notes="stargazer latex")
+# texreg
+texreg::texreg(list(lm1), custom.note="%stars. texreg")
+
+# pixiedust
+library(pixiedust)
+dust(lm1, caption = "pixiedust")
+
+# pander
+library(memisc)
+library(pander)
+lm1_table <- mtable(lm1)
+# pander(lm1_table, style="rmarkdown") # not working
+pander(lm1)
+```
