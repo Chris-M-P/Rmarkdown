@@ -1,0 +1,22 @@
+table,
+.table-condensed,
+table.rmdtable {
+
+}
+table,
+.table-condensed,
+table.rmdtable,
+table.rmdtable .header th,
+.table > thead > tr > th {
+
+}
+table.rmdtable th,
+table.rmdtable td,
+table th,
+table.rmdtable tr > td:first-child,
+table.rmdtable  {
+  font-size: 80%;
+  padding: 0.4em 0.5em;
+  font-weight: normal;
+  height: 15px;
+}

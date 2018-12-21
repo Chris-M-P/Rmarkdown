@@ -1,0 +1,42 @@
+---
+title: "Exercise 3"
+author: "Chris Penfold"
+date: "10 December 2018"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Embed a plot
+
+Here's an embedded plot
+
+```{r}
+library(ggplot2)
+ggplot(data = mpg, aes(x = drv, 
+                       y = hwy, 
+                       colour = drv)) + 
+  geom_boxplot()
+
+```
+
+
+## Embed a table
+
+Here's an embedded table
+
+```{r, results="asis"}
+library(arsenal)
+table_one <- tableby(drv ~ hwy + class, 
+                     data = mpg, 
+                     test=TRUE, 
+                     total=TRUE)
+summary(table_one)
+```
+
+
+## Inline R code
+
+We included `r nrow(mpg)` cars from the mpg dataset in our analyses. The mean fuel consumption of these cars was `r round(mean(mpg$hwy), 3)` mpg (sd = `r round(sd(mpg$hwy), 3)`).

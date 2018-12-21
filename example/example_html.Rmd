@@ -1,9 +1,8 @@
 ---
 title: "Untitled"
-output:
-  word_document: default
-  pdf_document: default
-  html_document: default
+author: "Chris Penfold"
+date: "7 December 2018"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
