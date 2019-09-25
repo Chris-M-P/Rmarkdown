@@ -1,11 +1,11 @@
 ---
 title: "Exercise 1"
 author: "Chris Penfold"
-date: "12 December 2018"
+date: "25 September, 2019"
 output:
-  word_document: default
-  pdf_document: default
   html_document: default
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}

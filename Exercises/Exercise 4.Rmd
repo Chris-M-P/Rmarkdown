@@ -1,8 +1,12 @@
 ---
-title: "Exercise 4"
+title: "Exercise 3"
 author: "Chris Penfold"
-date: "10 December 2018"
-output: word_document
+date: "25 September, 2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -11,9 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Embed a plot
 
-Here's an embedded plot without the accompanying R code (echo=FALSE) where I've changed the size and added a caption
+Here's an embedded plot
 
-```{r, echo = FALSE, output.width="50%", fig.cap="Fuel consumption by vehicle type"}
+```{r plot1, error=FALSE, warning=FALSE, fig.height=3, fig.width=3, fig.cap="Miles per gallon by drive type"}
 library(ggplot2)
 ggplot(data = mpg, aes(x = drv, 
                        y = hwy, 
@@ -25,18 +29,20 @@ ggplot(data = mpg, aes(x = drv,
 
 ## Embed a table
 
-Here's the code to embed a table which isn't executed (eval=FALSE)
+Here's an embedded table
 
-```{r, results="asis", eval=FALSE}
+```{r table1, results="asis", error=FALSE, warning=FALSE}
+library(BristolVis)
 library(arsenal)
-table_one <- tableby(drv ~ hwy + class, 
-                     data = mpg, 
-                     test=TRUE, 
-                     total=TRUE)
+table_one <- tableby(diet ~ bmi + sex, 
+                     data = bmi, 
+                     test=TRUE, # include tests of associations between diet and exposures
+                     total=TRUE, # include a total column
+                     control=tableby.control(digits=1)) # to control how many decimal places are in the table
 summary(table_one)
 ```
 
 
 ## Inline R code
 
-We included `r nrow(mpg)` cars from the mpg dataset in our analyses. The mean fuel consumption of these cars was `r round(mean(mpg$hwy), 3)` mpg (sd = `r round(sd(mpg$hwy), 3)`).
+We included `r nrow(bmi)` people from the `BMI` dataset in our analyses. The mean BMI of people in this study was `r round(mean(bmi$bmi), 1)`kg/m^2^ (sd = `r round(sd(bmi$bmi), 1)`kg/m^2^).
